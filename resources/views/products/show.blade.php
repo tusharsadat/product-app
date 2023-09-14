@@ -25,14 +25,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($products as $product)
             <tr>
                 <td>{{$product->name}}</td>
                 <td>{{$product->category}}</td>
                 <td>{{$product->price}}</td>
                 <td>{{$product->description}}</td>
-                <td><a href="{{route('products.show', $product->id)}}" class="btn btn-info">Show</a></td>
                 <td><a href="{{route('products.edit', $product->id)}}" class="btn btn-success">Edit</a></td>
+                <td><a href="{{route('products.index')}}" class="btn btn-info">Back</a></td>
                 <td>
                     <form action="{{ route('products.destroy', $product->id) }}" method="POST">
                         @csrf
@@ -40,26 +39,12 @@
                       <button type="submit" class="btn btn-danger" style="display: inline;">Delete</button>
                       </form>
                 </td>
-
+                
             </tr>
-            @endforeach
         </tbody>
         
     </table>
-    <div class="row">
-        <div class="col-8">
-            {{ $products->links() }}
         </div>
-        <div class="col-4">
-            <a href="{{url('product/export')}}" class="btn btn-success">Download Product</a>
-            <a href="{{url('product/upload')}}" class="btn btn-success">Import Product</a>
-        </div>
-      </div>
-    
-        </div>
-        
     </div>
-    
-    
 </body>
 </html>
