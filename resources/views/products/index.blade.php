@@ -11,9 +11,21 @@
     <div class="container">
         <div class="row">
             <h3 class="text-center py-2">Show All Product</h3>
-            <div class="row">
-                <a href="{{route('products.create')}}" class="btn btn-info float-end">Add Product</a>
+            <div class="col-3">
+                <a href="{{route('products.create')}}" class="btn btn-info">Add Product</a>
             </div>
+            
+            @if(Session::get('success'))
+		<div class="alert alert-success">
+			{{Session::get('success')}}
+		</div>
+	@endif
+
+	@if(Session::get('fail'))
+		<div class="alert alert-danger">
+			{{Session::get('fail')}}
+		</div>
+	@endif
     <table class="table table-striped">
         <thead>
             <tr>

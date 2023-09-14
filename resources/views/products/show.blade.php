@@ -11,8 +11,8 @@
     <div class="container">
         <div class="row">
             <h3 class="text-center py-2">Show All Product</h3>
-            <div class="row">
-                <a href="{{route('products.create')}}" class="btn btn-info float-end">Add Product</a>
+            <div class="col-3">
+                <a href="{{route('products.create')}}" class="btn btn-info">Add Product</a>
             </div>
     <table class="table table-striped">
         <thead>
